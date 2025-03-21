@@ -34,10 +34,10 @@ theme: channing-cyan
 
 ## 问题出现的原因
 最开始猜测是 `SwipeAction` 包裹的问题，然后我使用了普通的 `view` 标签进行包裹发现是正常的[效果](#effect2)，然后我去看了一下`SelectPicker`的实现代码，发现内部使用了`ActionSheet`，然后`ActionSheet`使用了`Popup`，接着我去官方`github`的`issue`搜索了一下相关的问题，找到了[#900](https://github.com/Moonofweisheng/wot-design-uni/issues/900)，其中提到了popup嵌套的问题
-![image.png](https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/88e8753944944ae1a6ba4ac4b07063d2~tplv-73owjymdk6-jj-mark-v1:0:0:0:0:5o6Y6YeR5oqA5pyv56S-5Yy6IEAgbXlsdHg=:q75.awebp?policy=eyJ2bSI6MywidWlkIjoiMjUyNDEzNDQyODkwNDg5NCJ9&rk3s=e9ecf3d6&x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&x-orig-expires=1742611932&x-orig-sign=NdslfXIQcUOW8w9fbKs7yE%2Fgg88%3D)
+![image.png](./1-1.webp)
 
 ## 解决方案
-![image.png](https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/8b1bf83240a64acaa5c91146bb6013dd~tplv-73owjymdk6-jj-mark-v1:0:0:0:0:5o6Y6YeR5oqA5pyv56S-5Yy6IEAgbXlsdHg=:q75.awebp?policy=eyJ2bSI6MywidWlkIjoiMjUyNDEzNDQyODkwNDg5NCJ9&rk3s=e9ecf3d6&x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&x-orig-expires=1742611947&x-orig-sign=uHHvWUUlKKNLBlnUlPpXbzh%2B9E0%3D)
+![image.png](./1-2.webp)
 
 按照`issue`中说的方法对代码进行了调整。[查看](#effect3)
 
